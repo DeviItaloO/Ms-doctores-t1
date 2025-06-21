@@ -4,20 +4,25 @@ server:
 spring:
   application:
     name: ms-doctores
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: MiSuperClaveParaElExamenT2123456789!@$#
   datasource:
     url: jdbc:mysql://localhost:3306/db_espinoza
     username: root
     password: root
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:
         format_sql: true
   flyway:
-    enabled: true
-    baseline-on-migrate: true
+    enabled: false
+    baseline-on-migrate: false
 
   kafka:
     bootstrap-servers: localhost:9092
